@@ -1,5 +1,5 @@
-require("config.lazy")
 require("mstch")
+require("config.lazy")
 
 print("hello")
 
