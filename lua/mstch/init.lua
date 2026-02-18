@@ -1,4 +1,2 @@
 require("mstch.remap")
-
-print("hello from mstch")
-
+require("mstch.set")
