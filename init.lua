@@ -1,5 +1,7 @@
-require("mstch")
-require("config.lazy")
+-- Put that first as it is required by some plugins
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
-print("hello")
+require("config.lazy")
+require("mstch")
 
