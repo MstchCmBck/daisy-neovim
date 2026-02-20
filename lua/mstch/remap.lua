@@ -10,6 +10,7 @@ vim.keymap.set("n", "<C-p>", Snacks.picker.git_files)
 vim.keymap.set("n", "<leader>/", Snacks.picker.grep)
 vim.keymap.set("n", "<leader>e", Snacks.explorer.open)
 vim.keymap.set("n", "<leader>gg", Snacks.lazygit.open)
+vim.keymap.set("n", "<leader>b", Snacks.picker.buffers)
 
 -- Shortcut for Snacks dashboard
 vim.keymap.set("n", "<leader>w", Snacks.dashboard.open)
