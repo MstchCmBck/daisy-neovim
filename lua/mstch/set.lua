@@ -16,6 +16,11 @@ vim.termguicolors = true
 
 vim.opt.scrolloff = 12
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = "Briefly highlight yanked text",
+    callback = function() vim.hl.on_yank() end
+})
+
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-frappe"
 require("mini.icons").setup()
