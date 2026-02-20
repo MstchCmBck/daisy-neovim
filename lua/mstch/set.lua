@@ -22,7 +22,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.opt.cursorline = true
 vim.termguicolors = true
 vim.opt.scrolloff = 12
+-- Having just one status bar
+vim.opt.laststatus = 3
+vim.opt.showmode = false
 
 -- Require plugins catppucin
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "catppuccin-macchiato"
 require("mini.icons").setup()
