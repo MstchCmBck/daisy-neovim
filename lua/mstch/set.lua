@@ -18,3 +18,4 @@ vim.opt.scrolloff = 12
 
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-frappe"
+require("mini.icons").setup()
