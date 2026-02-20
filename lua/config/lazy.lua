@@ -20,6 +20,7 @@ require("lazy").setup({
   spec = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "nvim-mini/mini.icons", version = false },
+    { "nvim-mini/mini.diff", version = false, opts = {} },
     -- import your plugins
     { import = "plugins" },
   },
