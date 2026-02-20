@@ -28,4 +28,3 @@ vim.opt.showmode = false
 
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-macchiato"
-require("mini.icons").setup()
