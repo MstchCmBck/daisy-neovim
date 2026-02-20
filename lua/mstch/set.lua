@@ -1,3 +1,5 @@
+-- Common NVim configuration
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -13,3 +15,6 @@ vim.opt.incsearch = true
 vim.termguicolors = true
 
 vim.opt.scrolloff = 12
+
+-- Require plugins catppucin
+vim.cmd.colorscheme "catppuccin-frappe"
