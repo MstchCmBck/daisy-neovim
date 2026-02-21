@@ -19,15 +19,7 @@ return {
             quickfile = { enabled = true },
             scope = { enabled = true },
             scroll = { enabled = true },
-            statuscolumn = {
-                enabled = true,
-                left = { "mark", "sign" },
-                right = { "fold", "git" },
-                git = {
-                    patterns = { "MiniDiffSign" },
-                },
-                refresh = 50,
-            },
+            statuscolumn = { enabled = true },
             words = { enabled = true },
             lazygit = { enabled = true},
         },
