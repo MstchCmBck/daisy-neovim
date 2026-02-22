@@ -22,6 +22,7 @@ return {
             statuscolumn = { enabled = true },
             words = { enabled = true },
             lazygit = { enabled = true },
+            terminal = { enabled = true },
         }
     }
 }

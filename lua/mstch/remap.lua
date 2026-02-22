@@ -15,3 +15,7 @@ vim.keymap.set("n", "<leader>b", Snacks.picker.buffers, { desc = "Buffer" })
 -- Shortcut for Snacks dashboard
 vim.keymap.set("n", "<leader>w", Snacks.dashboard.open, { desc = "Welcome"})
 
+-- Shortcut for Snacks terminal
+vim.keymap.set("n", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
+vim.keymap.set("t", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
+
