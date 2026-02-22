@@ -28,3 +28,12 @@ vim.opt.showmode = false
 
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-macchiato"
+
+-- Diagnostics related
+vim.api.nvim_create_autocmd("CursorHold", {
+    desc = "Display diagnostic when cursor hold",
+    callback = function()
+        vim.diagnostic.open_float(nil, { focusable = false })
+    end,
+})
+
