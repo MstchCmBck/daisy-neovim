@@ -22,4 +22,5 @@ vim.keymap.set("n", "<leader>w", Snacks.dashboard.open, { desc = "Welcome"})
 vim.keymap.set("n", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
 vim.keymap.set("t", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
 
+vim.keymap.set("n", "do", MiniDiff.toggle_overlay, { desc = "Show git diff" })
 
