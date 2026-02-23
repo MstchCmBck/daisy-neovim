@@ -22,6 +22,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.opt.cursorline = true
 vim.termguicolors = true
 vim.opt.scrolloff = 12
+vim.opt.updatetime = 250
 -- Having just one status bar
 vim.opt.laststatus = 3
 vim.opt.showmode = false
