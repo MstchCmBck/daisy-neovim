@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>pf", Snacks.picker.files, { desc = "Find file" })
 vim.keymap.set("n", "<C-p>", Snacks.picker.git_files, { desc = "Find file (git)" })
 vim.keymap.set("n", "<leader>/", Snacks.picker.grep, { desc = "Grep search" })
 vim.keymap.set("n", "<leader>e", Snacks.explorer.open, { desc = "File Explorer" })
-vim.keymap.set("n", "<leader>g", Snacks.lazygit.open, { desc = "Git" })
+vim.keymap.set("n", "<leader>gg", Snacks.lazygit.open, { desc = "Git" })
 vim.keymap.set("n", "<leader>b", Snacks.picker.buffers, { desc = "Buffer" })
 
 vim.keymap.set("n", "<leader>xx", Snacks.picker.diagnostics, { desc = "List diagnostics" })
@@ -21,4 +21,5 @@ vim.keymap.set("n", "<leader>w", Snacks.dashboard.open, { desc = "Welcome"})
 -- Shortcut for Snacks terminal
 vim.keymap.set("n", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
 vim.keymap.set("t", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
+
 
