@@ -27,6 +27,10 @@ vim.opt.updatetime = 250
 vim.opt.laststatus = 3
 vim.opt.showmode = false
 
+-- Reduce scroll wheel sensitivity
+vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
+vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelDown>', '<C-e>')
+
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-macchiato"
 
