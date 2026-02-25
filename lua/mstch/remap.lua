@@ -12,7 +12,6 @@ vim.keymap.set("n", "<leader>/", Snacks.picker.grep, { desc = "Grep search" })
 vim.keymap.set("n", "<leader>e", Snacks.explorer.open, { desc = "File Explorer" })
 vim.keymap.set("n", "<leader>gg", Snacks.lazygit.open, { desc = "Git" })
 vim.keymap.set("n", "<leader>b", Snacks.picker.buffers, { desc = "Buffer" })
-
 vim.keymap.set("n", "<leader>xx", Snacks.picker.diagnostics, { desc = "List diagnostics" })
 
 -- Shortcut for Snacks dashboard
@@ -22,5 +21,6 @@ vim.keymap.set("n", "<leader>w", Snacks.dashboard.open, { desc = "Welcome"})
 vim.keymap.set("n", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
 vim.keymap.set("t", "<leader>tt", Snacks.terminal.toggle, { desc = "Toggle terminal" })
 
+-- Shortcut to show git diff
 vim.keymap.set("n", "do", MiniDiff.toggle_overlay, { desc = "Show git diff" })
 
