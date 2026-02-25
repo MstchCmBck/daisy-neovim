@@ -26,6 +26,7 @@ vim.opt.updatetime = 250
 -- Having just one status bar
 vim.opt.laststatus = 3
 vim.opt.showmode = false
+vim.opt.foldmethod = 'indent'
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
