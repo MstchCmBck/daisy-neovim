@@ -23,6 +23,7 @@ require("lazy").setup({
     { "nvim-mini/mini.diff", version = false, opts = {} },
     { "nvim-mini/mini.statusline", version = false, opts = {} },
     { "nvim-mini/mini.bracketed", version = false, opts = {} },
+    { "nvim-mini/mini.surround", version = false, opts = {} },
     { "folke/which-key.nvim", version = false, opts = {} },
     -- import your plugins
     { import = "plugins" },
