@@ -33,6 +33,14 @@ vim.opt.clipboard = "unnamedplus"
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelDown>', '<C-e>')
 
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "Open help in a vertical split help",
+    pattern = "help",
+    callback = function()
+        vim.cmd("wincmd L")
+    end
+})
+
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-macchiato"
 
