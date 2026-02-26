@@ -27,6 +27,7 @@ vim.opt.updatetime = 250
 vim.opt.laststatus = 3
 vim.opt.showmode = false
 vim.opt.foldmethod = 'indent'
+vim.opt.clipboard = "unnamedplus"
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
