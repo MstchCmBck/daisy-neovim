@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Find file (netrw)" })
 vim.keymap.set("n", "<leader><space>x", "<cmd>source %<CR>", { desc = "Source file" })
 vim.keymap.set("n", "<leader>x", ":.lua<CR>", { desc = "Source line" })
 vim.keymap.set("v", "<leader>x", ":lua<CR>", { desc = "Source selection" })
+vim.keymap.set("i", "<C-space>", "<C-x><C-o>", { desc = "Auto-complete" })
 
 -- Shortcut for Snacks picker
 vim.keymap.set("n", "<leader>,", Snacks.picker.pickers, { desc = "Open picker" })

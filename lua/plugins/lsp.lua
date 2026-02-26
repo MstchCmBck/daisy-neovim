@@ -27,7 +27,6 @@ return {
                     map('gD', Snacks.picker.lsp_declarations, 'Goto Declaration')
                     map('gr', Snacks.picker.lsp_references, 'Goto References')
                     map('gI', Snacks.picker.lsp_implementations, 'Goto Implementation')
-                    map("<C-space>", vim.lsp.omnifunc, "Auto-complete")
 
                     -- The following two autocommands are used to highlight references of the
                     -- word under your cursor when your cursor rests there for a little while.
