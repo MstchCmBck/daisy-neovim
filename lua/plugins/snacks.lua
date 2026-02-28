@@ -21,6 +21,22 @@ return {
             scroll = { enabled = true },
             lazygit = { enabled = true },
             terminal = { enabled = true },
+        },
+        keys = {
+            -- Snacks picker shortcut
+            { "<leader>,", function() Snacks.picker.pickers() end, desc = "Open picker"},
+            { "<leader>pf", function() Snacks.picker.files() end, desc = "Find file" },
+            { "<C-p>", function() Snacks.picker.git_files() end, desc = "Find file (git" },
+            { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep search" },
+            { "<leader>e", function() Snacks.explorer.open() end, desc = "File Explorer" },
+            { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Git" },
+            { "<S-Tab>", function() Snacks.picker.buffers() end, desc = "Buffer" },
+            { "<leader>xx", function() Snacks.picker.diagnostics() end, desc = "List diagnostics" },
+            -- Snacks dashboard shortcut
+            { "<leader>w", function() Snacks.dashboard.open() end, desc = "Welcome"},
+            -- Snacks terminal shortcut
+            { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
+            { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
         }
     }
 }
