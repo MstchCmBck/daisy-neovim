@@ -28,6 +28,8 @@ vim.opt.laststatus = 3
 vim.opt.showmode = false
 vim.opt.foldmethod = 'indent'
 vim.opt.clipboard = "unnamedplus"
+-- Don't generate comment when using 'o' or 'O'.
+vim.opt.formatoptions:remove{ "o" }
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
