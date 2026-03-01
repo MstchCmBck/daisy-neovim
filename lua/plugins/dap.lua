@@ -14,7 +14,7 @@ return {
             { "<F10>", function() require("dap").step_over() end, desc = "Step over", mode = "n" },
             { "<F11>", function() require("dap").step_into() end, desc = "Step into", mode = "n" },
             { "<S-F11>", function() require("dap").step_out() end, desc = "Step out", mode = "n" },
-            { "<F4>", function() require("dap").close() end, desc = "Exit debugger", mode = "n" },
+            { "<F4>", function() require("dapui").close() end, desc = "Exit debugger", mode = "n" },
         },
         config = function ()
             require("mason-nvim-dap").setup()
