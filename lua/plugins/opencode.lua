@@ -23,6 +23,14 @@ return {
                 mode = "v",
             },
             {
+                "<leader>ap",
+                function ()
+                    require("opencode").select()
+                end,
+                desc = "Select prompt for opencode",
+                mode = "n",
+            },
+            {
                 "<leader>at",
                 function ()
                     require("opencode").toggle()
