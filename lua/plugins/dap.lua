@@ -4,9 +4,9 @@ return {
         dependencies = {
             "rcarriga/nvim-dap-ui",
             "nvim-neotest/nvim-nio",
-            "williamboman/mason.nvim"
+            "williamboman/mason.nvim",
+            "jay-babu/mason-nvim-dap.nvim"
         },
-        -- opts = {},
         keys = {
             { "<F9>", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint", mode = "n" },
             { "<F5>", function() require("dap").continue() end, desc = "Continue", mode = "n" },
@@ -14,8 +14,11 @@ return {
             { "<F10>", function() require("dap").step_over() end, desc = "Step over", mode = "n" },
             { "<F11>", function() require("dap").step_into() end, desc = "Step into", mode = "n" },
             { "<S-F11>", function() require("dap").step_out() end, desc = "Step out", mode = "n" },
+            { "<F4>", function() require("dap").close() end, desc = "Exit debugger", mode = "n" },
         },
         config = function ()
+            require("mason-nvim-dap").setup()
+
             local dap = require "dap"
             local dapui = require "dapui"
 
@@ -35,5 +38,12 @@ return {
                 numhl = 'DapBreakpoint'
             })
         end
+    },
+
+    {
+        "leoluz/nvim-dap-go",
+        ft = "go",
+        dependencies = { "mfussenegger/nvim-dap" },
+        opts = {}
     }
 }
