@@ -6,23 +6,34 @@ return {
             "nvim-neotest/nvim-nio",
             "williamboman/mason.nvim"
         },
+        -- opts = {},
+        keys = {
+            { "<F9>", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint", mode = "n" },
+            { "<F5>", function() require("dap").continue() end, desc = "Continue", mode = "n" },
+            { "<S-F5>", function() require("dap").restart() end, desc = "Restart", mode = "n" },
+            { "<F10>", function() require("dap").step_over() end, desc = "Step over", mode = "n" },
+            { "<F11>", function() require("dap").step_into() end, desc = "Step into", mode = "n" },
+            { "<S-F11>", function() require("dap").step_out() end, desc = "Step out", mode = "n" },
+        },
         config = function ()
             local dap = require "dap"
             local dapui = require "dapui"
 
             dapui.setup()
-
-            vim.keymap.set('n', '<F9>', dap.toggle_breakpoint, { desc = "Toggle breakpoint"})
-            vim.keymap.set('n', '<F5>', dap.continue, { desc = "Continue"})
-            vim.keymap.set('n', '<S-F5>', dap.restart, { desc = "Restart"})
-            vim.keymap.set('n', '<F10>', dap.step_over, { desc = "Step over"})
-            vim.keymap.set('n', '<F11>', dap.step_into, { desc = "Step into"})
-            vim.keymap.set('n', '<S-F11>', dap.step_out, { desc = "Step out"})
-
             dap.listeners.before.attach.dapui_config = function () dapui.open() end
             dap.listeners.before.launch.dapui_config = function () dapui.open() end
             dap.listeners.before.event_terminated.dapui_config = function () dapui.close() end
             dap.listeners.before.event_exited.dapui_config = function () dapui.close() end
+
+            -- Define the highlight color (Red)
+            vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermfg = 0, fg = '#993939' })
+            -- Define the sign (The Big Red Dot)
+            vim.fn.sign_define('DapBreakpoint', {
+                text = '●',
+                texthl = 'DapBreakpoint',
+                linehl = '',
+                numhl = 'DapBreakpoint'
+            })
         end
     }
 }
