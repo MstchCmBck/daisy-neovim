@@ -30,6 +30,9 @@ vim.opt.foldmethod = 'indent'
 vim.opt.clipboard = "unnamedplus"
 -- Don't generate comment when using 'o' or 'O'.
 vim.opt.formatoptions:remove{ "o" }
+-- Display unprintable
+vim.opt.list = true
+vim.opt.listchars = { tab = '>>', trail = '·', nbsp = '·', space = '·' }
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
