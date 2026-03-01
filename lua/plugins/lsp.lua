@@ -10,23 +10,20 @@ return {
             -- Allows extra capabilities provided by blink.cmp
             'saghen/blink.cmp',
         },
+        keys = {
+            { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP symbols", mode = "n" },
+            { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP symbols (all)", mode = "n" },
+            { "<F2>", function() vim.lsp.buf.rename() end, desc = "Rename", mode = "n" },
+            { "gra", function() vim.lsp.buf.code_actions() end, desc = "Code Actions", mode = { "n", "x" }},
+            { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", mode = "n" },
+            { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration", mode = "n" },
+            { "gr", function() Snacks.picker.lsp_references() end, desc = "Goto References", mode = "n" },
+            { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation", mode = "n" },
+        },
         config = function()
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
                 callback = function(event)
-                    local map = function(keys, func, desc, mode)
-                        mode = mode or 'n'
-                        vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-                    end
-
-                    map("<leader>ss", Snacks.picker.lsp_symbols, "LSP symbols")
-                    map("<leader>sS", Snacks.picker.lsp_workspace_symbols, "LSP symbols (all)")
-                    map('<F2>', vim.lsp.buf.rename, 'Rename')
-                    map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
-                    map("gd", Snacks.picker.lsp_definitions, "Goto definition")
-                    map('gD', Snacks.picker.lsp_declarations, 'Goto Declaration')
-                    map('gr', Snacks.picker.lsp_references, 'Goto References')
-                    map('gI', Snacks.picker.lsp_implementations, 'Goto Implementation')
 
                     -- The following two autocommands are used to highlight references of the
                     -- word under your cursor when your cursor rests there for a little while.
@@ -54,11 +51,6 @@ return {
                         })
                     end
 
-                    -- The following code creates a keymap to toggle inlay hints in your
-                    -- code, if the language server you are using supports them
-                    if client and client:supports_method('textDocument/inlayHint', event.buf) then
-                        map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
-                    end
                 end,
             })
 
