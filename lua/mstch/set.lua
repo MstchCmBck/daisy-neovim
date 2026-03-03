@@ -35,6 +35,8 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '·', space = '·' }
 -- Keep status column the same width
 vim.opt.signcolumn = "yes:2"
+-- Load project specific config
+vim.opt.exrc = true
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
