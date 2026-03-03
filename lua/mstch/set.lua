@@ -29,7 +29,7 @@ vim.opt.showmode = false
 vim.opt.foldmethod = 'indent'
 vim.opt.clipboard = "unnamedplus"
 -- Don't generate comment when using 'o' or 'O'.
-vim.opt.formatoptions:remove{ "o" }
+vim.opt.formatoptions:remove{ "o", "/" }
 -- Display unprintable
 vim.opt.list = true
 vim.opt.listchars = { tab = '>>', trail = '·', nbsp = '·', space = '·' }
