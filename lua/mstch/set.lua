@@ -37,6 +37,8 @@ vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '·', space = '·' }
 vim.opt.signcolumn = "yes:2"
 -- Load project specific config
 vim.opt.exrc = true
+-- Update buffer when modify outside of neovim
+vim.opt.autoread = true
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
