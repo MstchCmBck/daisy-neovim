@@ -26,7 +26,6 @@ vim.opt.updatetime = 250
 -- Having just one status bar
 vim.opt.laststatus = 3
 vim.opt.showmode = false
-vim.opt.foldmethod = 'indent'
 vim.opt.clipboard = "unnamedplus"
 -- Don't generate comment when using 'o' or 'O'.
 vim.opt.formatoptions:remove{ "o", "/" }
@@ -39,6 +38,10 @@ vim.opt.signcolumn = "yes:2"
 vim.opt.exrc = true
 -- Update buffer when modify outside of neovim
 vim.opt.autoread = true
+
+-- Fold text
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 5
 
 -- Reduce scroll wheel sensitivity
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
