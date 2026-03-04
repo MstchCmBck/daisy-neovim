@@ -14,8 +14,8 @@ vim.opt.smartindent = true
 -- Highlight things ...
 vim.opt.incsearch = true
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = "Briefly highlight yanked text",
-    callback = function() vim.hl.on_yank() end
+  desc = "Briefly highlight yanked text",
+  callback = function() vim.hl.on_yank() end
 })
 
 -- Small nice improvments
@@ -45,11 +45,11 @@ vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelUp>', '<C-y>')
 vim.keymap.set({'n', 'v', 's'}, '<ScrollWheelDown>', '<C-e>')
 
 vim.api.nvim_create_autocmd("FileType", {
-    desc = "Open help in a vertical split help",
-    pattern = "help",
-    callback = function()
-        vim.cmd("wincmd L")
-    end
+  desc = "Open help in a vertical split help",
+  pattern = "help",
+  callback = function()
+    vim.cmd("wincmd L")
+  end
 })
 
 -- Require plugins catppucin
@@ -57,9 +57,9 @@ vim.cmd.colorscheme "catppuccin-macchiato"
 
 -- Diagnostics related
 vim.api.nvim_create_autocmd("CursorHold", {
-    desc = "Display diagnostic when cursor hold",
-    callback = function()
-        vim.diagnostic.open_float(nil, { focusable = false })
-    end,
+  desc = "Display diagnostic when cursor hold",
+  callback = function()
+    vim.diagnostic.open_float(nil, { focusable = false })
+  end,
 })
 
