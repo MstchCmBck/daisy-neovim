@@ -57,6 +57,14 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Require plugins catppucin
 vim.cmd.colorscheme "catppuccin-macchiato"
+-- Set separation line purple
+require("catppuccin").setup({
+    custom_highlights = function(colors)
+        return {
+            WinSeparator = { fg = colors.mauve, style = { "bold" } },
+        }
+    end
+})
 
 -- Diagnostics related
 vim.api.nvim_create_autocmd("CursorHold", {
