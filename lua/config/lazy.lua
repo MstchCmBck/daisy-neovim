@@ -28,6 +28,7 @@ require("lazy").setup({
     { "nvim-mini/mini.clue", version = false, opts = {} },
     { "nvim-mini/mini.pairs", version = false, opts = {} },
     { "folke/which-key.nvim", version = false, opts = {} },
+    { "mfussenegger/nvim-jdtls", version = false },
     -- import your plugins
     { import = "plugins" },
   },
