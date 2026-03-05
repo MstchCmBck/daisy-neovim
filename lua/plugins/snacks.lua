@@ -36,7 +36,6 @@ return {
       { "<leader>w", function() Snacks.dashboard.open() end, desc = "Welcome"},
       -- Snacks terminal shortcut
       { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
-      { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
     }
   }
 }
