@@ -36,6 +36,12 @@ return {
       { "<leader>w", function() Snacks.dashboard.open() end, desc = "Welcome"},
       -- Snacks terminal shortcut
       { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
+      -- LSP shortcut
+      { "grr", function() Snacks.picker.lsp_references() end, desc = "Goto references" },
+      { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "Goto incoming call" },
+      { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "Goto outgoing call" },
+      { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "Goto symbols" },
+      { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Goto symbols (all)" },
     }
   }
 }
