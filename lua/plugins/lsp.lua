@@ -10,6 +10,10 @@ return {
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
+    -- Load plugin when LSP attaches to a buffer
+    event = "LspAttach",
+
+    -- Key mappings for LSP functionality
     keys = {
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP symbols", mode = "n" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP symbols (all)", mode = "n" },
@@ -19,6 +23,7 @@ return {
       { "gr", function() Snacks.picker.lsp_references() end, desc = "Goto References", mode = "n" },
       { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation", mode = "n" },
     },
+
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
