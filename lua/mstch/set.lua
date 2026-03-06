@@ -18,22 +18,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end
 })
 
+-- Status bar (bottom ), winbar (top) and column (left)
+-- Having just one status bar
+vim.opt.laststatus = 3
+vim.opt.showmode = false
+vim.opt.clipboard = "unnamedplus"
+-- Top winbar display file name
+vim.opt.winbar = "%f %m"
+-- Keep status column the same width
+vim.opt.signcolumn = "yes:2"
+
 -- Small nice improvments
 vim.opt.cursorline = true
 vim.termguicolors = true
 vim.opt.scrolloff = 12
 vim.opt.updatetime = 250
--- Having just one status bar
-vim.opt.laststatus = 3
-vim.opt.showmode = false
-vim.opt.clipboard = "unnamedplus"
 -- Don't generate comment when using 'o' or 'O'.
 vim.opt.formatoptions:remove{ "o", "/" }
 -- Display unprintable
 vim.opt.list = true
 vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '·', space = '·' }
--- Keep status column the same width
-vim.opt.signcolumn = "yes:2"
 -- Load project specific config
 vim.opt.exrc = true
 -- Update buffer when modify outside of neovim
