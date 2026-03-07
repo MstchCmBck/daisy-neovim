@@ -7,6 +7,10 @@ vim.opt.relativenumber = true
 -- Underscode separator
 vim.opt.iskeyword:remove("_")
 
+-- Searh improvments
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- Indentation
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
