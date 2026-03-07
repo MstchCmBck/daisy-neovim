@@ -4,6 +4,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Underscode separator
+vim.opt.iskeyword:remove("_")
+
 -- Indentation
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
