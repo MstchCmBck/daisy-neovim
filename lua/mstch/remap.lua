@@ -1,19 +1,30 @@
+-- Helper function to create vim keymaps
+---@param keys string The key combination (e.g., '<leader>wf')
+---@param func string|function The command or lua function to execute
+---@param dsc string The description for the keymap (used in which-key, etc.)
+---@param mode? string|string[] The mode(s) for the mapping (default: 'n')
+---@param noremap? boolean Whether to use non-recursive mapping (default: nil)
+local map = function(keys, func, dsc, mode, noremap)
+  mode = mode or 'n'
+  vim.keymap.set(mode, keys, func, { desc = dsc, noremap = noremap })
+end
+
 -- Shortcut that works wiht Vanilla NVim
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Find file (netrw)" })
-vim.keymap.set("n", "<leader><space>x", "<cmd>source %<CR>", { desc = "Source file" })
-vim.keymap.set("n", "<leader>x", ":.lua<CR>", { desc = "Source line" })
-vim.keymap.set("v", "<leader>x", ":lua<CR>", { desc = "Source selection" })
-vim.keymap.set("i", "<C-space>", "<C-x><C-o>", { desc = "Auto-complete" })
-vim.keymap.set("t", "<leader>tt", [[<C-\><C-n>]], { noremap = true, desc = "Enter normal mode in terminal" })
+map("<leader>pv", vim.cmd.Ex, "Find file (netrw)")
+map("<leader><space>x", "<cmd>source %<CR>", "Source file")
+map("<leader>x", ":.lua<CR>", "Source line")
+map("<leader>x", ":lua<CR>", "Source selection", "v")
+map("<C-space>", "<C-x><C-o>", "Auto-complete", "i")
+map("<leader>tt", [[<C-\><C-n>]], "Enter normal mode in terminal", "t", true)
 
 -- Use Meta key to move lines
 -- Normal mode
-vim.keymap.set("n", "<M-Up>", ":m .-2<CR>==", { desc = "Move selection up" })
-vim.keymap.set("n", "<M-Down>", ":m .+1<CR>==", { desc = "Move selection down" })
+map("<M-Up>", ":m .-2<CR>==", "Move selection up")
+map("<M-Down>", ":m .+1<CR>==", "Move selection down")
 -- Visual mode
-vim.keymap.set("v", "<M-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-vim.keymap.set("v", "<M-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("<M-Up>", ":m '<-2<CR>gv=gv", "Move selection up")
+map("<M-Down>", ":m '>+1<CR>gv=gv", "Move selection down")
 
 -- Shortcut that works with plugins
-vim.keymap.set("n", "do", require("mini.diff").toggle_overlay, { desc = "Show git diff" })
+map("do", require("mini.diff").toggle_overlay, "Show git diff")
 
