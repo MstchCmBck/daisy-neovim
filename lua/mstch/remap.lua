@@ -26,6 +26,12 @@ map("<M-Down>", ":m .+1<CR>==", "Move selection down", "n")
 map("<M-Up>", ":m '<-2<CR>gv=gv", "Move selection up", "v")
 map("<M-Down>", ":m '>+1<CR>gv=gv", "Move selection down", "v")
 
+-- Resize windows
+map("<C-w><left>", "<C-w><", "Decrease width", "n")
+map("<C-w><right>", "<C-w>>", "Increase width", "n")
+map("<C-w><up>", "<C-w>+", "Increase height", "n")
+map("<C-w><down>", "<C-w>-", "Decrease height", "n")
+
 -- Shortcut that works with plugins
 map("do", require("mini.diff").toggle_overlay, "Show git diff")
 
