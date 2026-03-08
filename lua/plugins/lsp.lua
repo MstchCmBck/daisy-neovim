@@ -2,6 +2,7 @@ return {
   {
     -- Auto enable installed LSP server
     "mason-org/mason-lspconfig.nvim",
+    event = "VeryLazy",
     opts = {},
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
@@ -12,6 +13,7 @@ return {
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    event = "VeryLazy",
     dependencies = {
       { 'mason-org/mason.nvim', opts = {} },
       -- Useful status updates for LSP.

@@ -2,6 +2,7 @@ return {
   {
     'saghen/blink.cmp',
     version = '1.*',
+    event = "VeryLazy",
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
