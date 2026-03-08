@@ -66,11 +66,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
--- Set separation line purple
+-- Set separation line purple and customize winbar
 require("catppuccin").setup({
   custom_highlights = function(colors)
     return {
       WinSeparator = { fg = colors.mauve, style = { "bold" } },
+      -- WinBar background customization
+      WinBar = { bg = colors.surface1, fg = colors.text },
+      WinBarNC = { bg = colors.surface0, fg = colors.overlay0 },
     }
   end
 })
