@@ -42,6 +42,7 @@ return {
       { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "Goto outgoing call" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "Goto symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Goto symbols (all)" },
+      { "<leader>dd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     }
   }
 }
