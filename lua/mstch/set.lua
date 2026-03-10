@@ -34,6 +34,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.winbar = "%f %m"
 -- Keep status column the same width
 vim.opt.signcolumn = "yes:2"
+vim.opt.winborder = "rounded"
 
 -- Small nice improvments
 vim.opt.cursorline = true
