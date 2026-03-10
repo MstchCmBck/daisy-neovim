@@ -80,6 +80,18 @@ require("catppuccin").setup({
 })
 -- Apply colorscheme after setup
 vim.cmd.colorscheme "catppuccin-macchiato"
+-- Change diagnostic icons
+local severity = vim.diagnostic.severity
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [severity.ERROR] = " ",
+      [severity.WARN] = " ",
+      [severity.HINT] = "󰠠 ",
+      [severity.INFO] = " ",
+    },
+  },
+})
 
 -- Diagnostics related
 vim.api.nvim_create_autocmd("CursorHold", {
