@@ -3,7 +3,7 @@
 ---@param func string|function The command or lua function to execute
 ---@param dsc string The description for the keymap (used in which-key, etc.)
 ---@param mode? string|string[] The mode(s) for the mapping (default: 'n')
-local map = function(keys, func, dsc, mode, noremap)
+local map = function(keys, func, dsc, mode)
   mode = mode or 'n'
   vim.keymap.set(mode, keys, func, { desc = dsc, silent = true })
 end

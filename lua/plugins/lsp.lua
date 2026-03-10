@@ -3,7 +3,14 @@ return {
     -- Auto enable installed LSP server
     "mason-org/mason-lspconfig.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "gopls",
+        "jdtls",
+        "pyright",
+      }
+    },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig",
@@ -21,11 +28,11 @@ return {
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
-
-    config = function()
-      -- Special Lua Config, as recommended by neovim help docs
-      vim.lsp.config('lua_ls', require('plugins.lsp.lua'))
-      vim.lsp.enable 'lua_ls'
-    end,
   },
+
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {},
+  }
 }
