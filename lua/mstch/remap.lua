@@ -13,6 +13,8 @@ vim.keymap.set("n", "<leader>x", ":.lua<CR>", {desc = "Source line" })
 vim.keymap.set("v", "<leader>x", ":lua<CR>", { desc = "Source selection" })
 
 -- Shortcut that works wiht Vanilla NVim
+map("<C-BS>", "<C-w>", "Delete word in insert mode", { "i", "c" })
+map("<C-H>", "<C-w>", "Delete word in insert mode", { "i", "c" })
 map("<leader><space>x", "<cmd>source %<CR>", "Source file")
 map("<leader>pv", vim.cmd.Ex, "Find file (netrw)")
 map("<C-space>", "<C-x><C-o>", "Auto-complete", "i")
