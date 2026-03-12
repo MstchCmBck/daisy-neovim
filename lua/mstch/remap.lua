@@ -18,7 +18,12 @@ map("<C-H>", "<C-w>", "Delete word in insert mode", { "i", "c" })
 map("<leader><space>x", "<cmd>source %<CR>", "Source file")
 map("<leader>pv", vim.cmd.Ex, "Find file (netrw)")
 map("<C-space>", "<C-x><C-o>", "Auto-complete", "i")
-map("<leader>tt", [[<C-\><C-n>]], "Enter normal mode in terminal", "t")
+
+-- Terminal mode mappings
+-- Use <C-e> to escape terminal mode (works in all terminal types)
+map("<C-e>", [[<C-\><C-n>]], "Enter normal mode in terminal", "t")
+-- Disable leader key in terminal mode to prevent space from being interpreted as leader
+map("<Space>", "<Space>", "Insert space in terminal", "t")
 
 -- Use Meta key to move lines
 -- Normal mode
