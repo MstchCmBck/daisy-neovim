@@ -45,6 +45,7 @@ return {
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "Goto symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Goto symbols (all)" },
       { "<leader>dd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+      { "<leader>hd", function() Snacks.picker.git_diff() end, desc = "Diagnostics" },
     }
   }
 }
