@@ -20,9 +20,15 @@ return {
       local extra = vim.fn.glob(mason_folder .. "/packages/java-test/extension/server/*", true, true)
       vim.list_extend(bundles, extra)
 
+      local on_attach = function()
+        vim.keymap.set("n", "<leader>tm", jdtls.test_nearest_method, { desc = "Test method" })
+        vim.keymap.set("n", "<leader>tc", jdtls.test_class, { desc = "Test class" })
+      end
+
       local lsp_config = {
         name = "nvim-jdtls",
         cmd = { mason_folder .. "/bin/jdtls" },
+        on_attach = on_attach,
 
         -- Add JDTLS plugins
         init_options = {
