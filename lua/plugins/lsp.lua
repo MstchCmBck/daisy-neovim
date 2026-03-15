@@ -7,8 +7,10 @@ return {
       ensure_installed = {
         "lua_ls",
         "gopls",
-        "jdtls",
         "pyright",
+      },
+      automatic_enable = {
+        exclude = { "jdtls" }
       }
     },
     dependencies = {
@@ -28,6 +30,10 @@ return {
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
+    config = function()
+      -- No special config needed for nvim-lspconfig
+      -- jdtls is handled by nvim-jdtls plugin
+    end
   },
 
   {
