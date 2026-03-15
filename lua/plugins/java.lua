@@ -33,6 +33,20 @@ return {
         -- Add JDTLS plugins
         init_options = {
           bundles = bundles,
+        },
+
+        settings = {
+          java = {
+            home = "/usr/lib/jvm/java-21-openjdk",
+            configuration = {
+              updateBuildConfiguration = "automatic",
+            },
+            import = {
+              gradle = {
+                enabled = true,
+              },
+            },
+          },
         }
       }
 
