@@ -6,14 +6,28 @@ return {
       "williamboman/mason.nvim",
       "neovim/nvim-lspconfig",
       "saghen/blink.cmp",
+      "microsoft/java-debug",
     },
     event = "VeryLazy",
     config = function()
       local jdtls = require("jdtls")
+      local mason_folder = vim.fn.stdpath("data") .. "/mason"
+
+      -- Gather all *jar used to debug
+      local bundles = {
+        vim.fn.glob(mason_folder .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar", true)
+      }
+      local extra = vim.fn.glob(mason_folder .. "/packages/java-test/extension/server/*", true, true)
+      vim.list_extend(bundles, extra)
 
       local lsp_config = {
         name = "nvim-jdtls",
-        cmd = { vim.fn.stdpath("data") .. "/mason/bin/jdtls" },
+        cmd = { mason_folder .. "/bin/jdtls" },
+
+        -- Add JDTLS plugins
+        init_options = {
+          bundles = bundles,
+        }
       }
 
       vim.api.nvim_create_autocmd("FileType", {
@@ -24,10 +38,6 @@ return {
         end
       })
     end,
-  },
-  {
-    "microsoft/java-debug",
-    ft = "java",
   },
 }
 
