@@ -37,6 +37,15 @@ return {
         linehl = '',
         numhl = 'DapBreakpoint'
       })
+      -- Define the highlight color (Grey)
+      vim.api.nvim_set_hl(0, 'DapBreakpointRejected', { ctermfg = 0, fg = '#808080' })
+      -- Define the sign (The Big Grey Dot)
+      vim.fn.sign_define('DapBreakpointRejected', {
+        text = '●',
+        texthl = 'DapBreakpointRejected',
+        linehl = '',
+        numhl = 'DapBreakpointRejected'
+      })
     end
   },
 
