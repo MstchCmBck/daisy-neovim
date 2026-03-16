@@ -43,10 +43,15 @@ return {
       { "grr", function() Snacks.picker.lsp_references() end, desc = "Goto references" },
       { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "Goto incoming call" },
       { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "Goto outgoing call" },
-      { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "Goto symbols" },
-      { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Goto symbols (all)" },
-      { "<leader>dd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-      { "<leader>hd", function() Snacks.picker.git_diff() end, desc = "Diagnostics" },
+      { "<leader>ps", function() Snacks.picker.lsp_symbols() end, desc = "Goto symbols" },
+      { "<leader>pS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Goto symbols (all)" },
+      { "<leader>pd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+      { "<leader>ph", function() Snacks.picker.git_diff() end, desc = "Diagnostics" },
+      -- Miscellaneous
+      { "<leader>pe", function() Snacks.picker.icons() end, desc = "Emoji" },
+      { "<leader>ph", function() Snacks.picker.help() end, desc = "Help Pages" },
+      { "<leader>pu", function() Snacks.picker.undo() end, desc = "Undo history" },
+      { "<leader>pr", function() Snacks.picker.projects() end, desc = "Projects" },
     }
   }
 }
