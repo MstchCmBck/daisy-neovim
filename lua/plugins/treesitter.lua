@@ -7,7 +7,16 @@ return {
     lazy = false,
     opts = {
       ensure_installed = {
-        "lua", "vim", "java", "python", "go", "gomod", "gosum", "gowork",
+        "lua",
+        "vim",
+        "java",
+        "python",
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
+        "markdown",
+        "html",
       },
       -- Enable syntax highlighting
       highlight = {
