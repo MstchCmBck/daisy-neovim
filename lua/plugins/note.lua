@@ -9,6 +9,16 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+    -- Create an autocmd to start treesitter on each markdown buffer
+    config = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "markdown",
+        desc = "Activate treesitter for markdown file",
+        callback = function()
+          vim.treesitter.start()
+        end,
+      })
+    end,
   },
   {
     "echaya/neowiki.nvim",

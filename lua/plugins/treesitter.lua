@@ -16,6 +16,7 @@ return {
         "gosum",
         "gowork",
         "markdown",
+        "markdown_inline",
         "html",
       },
       -- Enable syntax highlighting
