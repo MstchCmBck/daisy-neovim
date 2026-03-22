@@ -18,6 +18,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- Spell check
+vim.opt.spelllang = "en,fr,pt"
+vim.opt.spell = true
+
 -- Highlight things ...
 vim.opt.incsearch = true
 vim.api.nvim_create_autocmd('TextYankPost', {
