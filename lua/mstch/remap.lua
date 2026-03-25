@@ -8,11 +8,11 @@ local map = function(keys, func, dsc, mode)
   vim.keymap.set(mode, keys, func, { desc = dsc, silent = true })
 end
 
--- Those shortcut needs to be usable whithout map function
+-- Those shortcut needs to be usable without map function
 vim.keymap.set("n", "<leader>x", ":.lua<CR>", {desc = "Source line" })
 vim.keymap.set("v", "<leader>x", ":lua<CR>", { desc = "Source selection" })
 
--- Shortcut that works wiht Vanilla NVim
+-- Shortcut that works with Vanilla NVim
 map("<C-BS>", "<C-w>", "Delete word in insert mode", { "i", "c" })
 map("<C-H>", "<C-w>", "Delete word in insert mode", { "i", "c" })
 map("<leader><space>x", "<cmd>source %<CR>", "Source file")
@@ -21,8 +21,8 @@ map("<C-space>", "<C-x><C-o>", "Auto-complete", "i")
 map("<leader>bd", ":bd<CR>", "Delete Buffer")
 
 -- Terminal mode mappings
--- Use <C-e> to escape terminal mode (works in all terminal types)
-map("<C-e>", [[<C-\><C-n>]], "Enter normal mode in terminal", "t")
+-- Use Esc to escape terminal mode (works in all terminal types)
+map("<Esc>", [[<C-\><C-n>]], "Escape terminal mode", "t")
 -- Disable leader key in terminal mode to prevent space from being interpreted as leader
 map("<Space>", "<Space>", "Insert space in terminal", "t")
 

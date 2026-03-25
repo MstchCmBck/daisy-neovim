@@ -35,10 +35,8 @@ return {
       { "<leader>xx", function() Snacks.picker.diagnostics() end, desc = "List diagnostics" },
       -- Snacks dashboard shortcut
       { "<leader>w", function() Snacks.dashboard.open() end, desc = "Welcome"},
-      -- Snacks terminal shortcut (use <C-e> to escape terminal mode)
+      -- Snacks terminal shortcut
       { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
-      -- Terminal escape mapping (works in all terminal types)
-      { "<C-e>", function() vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true), "n", true) end, desc = "Escape terminal mode", mode = "t" },
       -- LSP shortcut
       { "grr", function() Snacks.picker.lsp_references() end, desc = "Goto references" },
       { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "Goto incoming call" },
