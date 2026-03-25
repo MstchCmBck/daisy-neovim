@@ -32,7 +32,7 @@ return {
       { "<leader>e", function() Snacks.explorer.open() end, desc = "File Explorer" },
       { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Git" },
       { "<S-Tab>", function() Snacks.picker.buffers() end, desc = "Buffer" },
-      { "<leader>xx", function() Snacks.picker.diagnostics() end, desc = "List diagnostics" },
+      { "<leader>px", function() Snacks.picker.diagnostics() end, desc = "List diagnostics" },
       -- Snacks dashboard shortcut
       { "<leader>w", function() Snacks.dashboard.open() end, desc = "Welcome"},
       -- Snacks terminal shortcut
