@@ -8,6 +8,7 @@ return {
         "lua_ls",
         "gopls",
         "pyright",
+        "ts_ls",
       },
       automatic_enable = {
         exclude = { "jdtls" }

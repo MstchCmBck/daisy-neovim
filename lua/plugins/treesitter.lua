@@ -18,6 +18,10 @@ return {
         "markdown",
         "markdown_inline",
         "html",
+        "javascript",
+        "typescript",
+        "json",
+        "css"
       },
       -- Enable syntax highlighting
       highlight = {
