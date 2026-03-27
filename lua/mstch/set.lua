@@ -4,10 +4,10 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- Underscode separator
+-- Underscore separator
 vim.opt.iskeyword:remove("_")
 
--- Searh improvments
+-- Search improvements
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -21,6 +21,10 @@ vim.opt.smartindent = true
 -- Spell check
 vim.opt.spelllang = "en,fr,pt"
 vim.opt.spell = true
+vim.api.nvim_create_autocmd("TermOpen", {
+  desc = "Deactivate spellcheck for terminal buffer",
+  callback = function() vim.opt.spell = false end,
+})
 
 -- Highlight things ...
 vim.opt.incsearch = true
@@ -29,7 +33,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end
 })
 
--- Small nice improvments
+-- Small nice improvements
 vim.opt.cursorline = true
 vim.opt.scrolloff = 12
 vim.opt.updatetime = 250
@@ -40,7 +44,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '·', space = '·' }
 -- Load project specific config
 vim.opt.exrc = true
--- Update buffer when modify outside of neovim
+-- Update buffer when modify outside of neo vim
 vim.opt.autoread = true
 
 -- Fold text
