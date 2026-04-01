@@ -97,7 +97,7 @@ return {
       },
       -- Snacks terminal shortcut
       {
-        "<leader>tt",
+        "<leader>c",
         function()
           Snacks.terminal.toggle()
         end,

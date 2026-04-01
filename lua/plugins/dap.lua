@@ -166,6 +166,20 @@ return {
     },
     keys = {
       {
+        "<leader>tt",
+        function()
+          require("neotest").run.run(vim.fn.expand("%"))
+        end,
+        desc = "Test All Files",
+      },
+      {
+        "<leader>tT",
+        function()
+          require("neotest").run.run(vim.uv.cwd())
+        end,
+        desc = "Test Whole Project",
+      },
+      {
         "<leader>tr",
         function()
           require("neotest").run.run()
@@ -178,6 +192,13 @@ return {
           require("neotest").run.run({ strategy = "dap" })
         end,
         desc = "Test Debug",
+      },
+      {
+        "<leader>tl",
+        function()
+          require("neotest").run.run_last({ strategy = "dap" })
+        end,
+        desc = "Test Debug Last",
       },
       {
         "<leader>tk",
