@@ -66,8 +66,6 @@ return {
       },
     },
     config = function()
-      require("mason-nvim-dap").setup()
-
       local dap = require("dap")
       local dapui = require("dapui")
 
@@ -107,6 +105,38 @@ return {
   },
 
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = "mason.nvim",
+    cmd = { "DapInstall", "DapUninstall" },
+    opts = {
+      automatic_installation = true,
+      ensure_installed = {
+        "js-debug-adapter",
+        "python-debugpy",
+        "delve",
+        "java-debug-adapter",
+        "lua-debug-adapter",
+      },
+      handlers = {
+        js = function(config)
+          local dap = require("dap")
+          local js_debug_path = vim.fn.stdpath("data")
+            .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+          dap.adapters["pwa-node"] = {
+            type = "server",
+            host = "localhost",
+            port = "${port}",
+            executable = {
+              command = "node",
+              args = { js_debug_path, "${port}" },
+            },
+          }
+        end,
+      },
+    },
+  },
+
+  {
     "leoluz/nvim-dap-go",
     ft = "go",
     dependencies = { "mfussenegger/nvim-dap" },
@@ -122,6 +152,18 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-jest",
     },
+    opts = {
+      strategy_config = {
+        dap = {
+          type = "pwa-node",
+          request = "launch",
+          name = "Debug Jest Tests",
+          env = {
+            CI = true,
+          },
+        },
+      },
+    },
     keys = {
       {
         "<leader>tr",
@@ -129,6 +171,13 @@ return {
           require("neotest").run.run()
         end,
         desc = "Test Run",
+      },
+      {
+        "<leader>td",
+        function()
+          require("neotest").run.run({ strategy = "dap" })
+        end,
+        desc = "Test Debug",
       },
       {
         "<leader>tk",

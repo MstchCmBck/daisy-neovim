@@ -8,6 +8,7 @@ return {
     opts = {
       ensure_installed = {
         "lua",
+        "luadoc",
         "vim",
         "java",
         "python",
@@ -21,7 +22,9 @@ return {
         "javascript",
         "typescript",
         "json",
-        "css"
+        "css",
+        "javascript",
+        "jsdoc",
       },
       -- Enable syntax highlighting
       highlight = {
@@ -30,8 +33,8 @@ return {
       },
       -- Enable indentation based on treesitter
       indent = {
-        enable = true
-      }
-    }
-  }
+        enable = true,
+      },
+    },
+  },
 }
