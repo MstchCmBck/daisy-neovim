@@ -20,6 +20,7 @@ require("lazy").setup({
   spec = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "folke/which-key.nvim", version = false, event = "VeryLazy", opts = {} },
+    { "norcalli/nvim-colorizer.lua", event = "VeryLazy", opts = { "*" } },
     -- import your plugins
     { import = "plugins" },
   },
@@ -27,4 +28,3 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
-
